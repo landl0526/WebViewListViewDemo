@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WebViewListViewDemo"
+             x:Class="WebViewListViewDemo.MainPage">
+
+    <local:MyListView x:Name="MyListView" HasUnevenRows="True">
+        <local:MyListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <local:AutoWebView>
+                            <local:AutoWebView.Source>
+                                <HtmlWebViewSource Html="{Binding}"/>
+                            </local:AutoWebView.Source>
+                        </local:AutoWebView>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </local:MyListView.ItemTemplate>
+    </local:MyListView>
+
+</ContentPage>
